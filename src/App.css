@@ -1,0 +1,224 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary-color: #3B3C36;
+    --secondary-color: #FFFBFC;
+    --accent-color: #B4B8AB;
+    --neutral-color: #8D8DAA;
+    --highlight-color: #F05454;
+    --light-hover-color: #EFEFEF;
+    --body-background-color: #E8E8E8;
+}
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--primary-color);
+    font-family: Mulish, sans-serif;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 35rem;
+    width: 95vw;
+    margin: 0 auto;
+    margin-top: 8rem;
+    transition: box-shadow 0.3s ease-in-out;
+    }
+    
+.app-container:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.to-do-form {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.to-do-form h2 {
+    margin: 0 0 4rem 0;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-family: 'Mulish', sans-serif;
+    /* Or any other distinct font */
+    text-align: center;
+    position: relative;
+}
+
+.to-do-form h2::after {
+    content: "";
+    width: 50px;
+    height: 5px;
+    background-color: var(--accent-color);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.to-do-input {
+    border: 2px solid var(--accent-color);
+    padding: 0.5rem;
+    flex: 1 0 auto;
+    font-size: 1rem;
+    border-radius: 5px;
+    height: 2rem;
+    background-color: var(--secondary-color);
+    outline-color: var(--neutral-color);
+    margin-right: 1rem;
+}
+
+.to-do-input::placeholder {
+    color: var(--accent-color)
+}
+
+.submit-btn {
+    background-color: var(--neutral-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    flex: 0 0 5rem;
+    letter-spacing: 1px;
+    height: 2rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.to-do-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clear-btn {
+    background-color: var(--highlight-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.clear-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.to-do-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.to-do-item {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.to-do-item:hover {
+    background-color: var(--light-hover-color);
+}
+
+
+.title {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+    right: 1rem;
+}
+
+.to-do-item:hover .btn-container {
+    opacity: 1;
+}
+
+.edit-btn,
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.edit-btn {
+    color: var(--primary-color)
+}
+
+.edit-btn:hover {
+    color: var(--accent-color)
+}
+
+.delete-btn {
+    color: var(--primary-color)
+}
+
+.delete-btn:hover {
+    color: var(--highlight-color)
+}
+
+.alert {
+    margin: 0 0 2rem 0;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    display: grid;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 0.1em;
+}
+
+.alert-plus {
+    background-color: var(--neutral-color);
+}
+
+.alert-minus {
+    background-color: var(--highlight-color);
+}
+
+@media screen and (min-width: 992px) {
+    .app-container {
+        width: 95vw;
+    }
+}
+
